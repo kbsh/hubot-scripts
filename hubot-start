@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export HUBOT_CHATWORK_TOKEN="xxxxxxxxxxxxx"
+export HUBOT_CHATWORK_ROOMS="xxxxxxxxxxxxx"
+export HUBOT_CHATWORK_API_RATE="500"
+
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+
+npm install
+
+forever start -c coffee node_modules/.bin/hubot --adapter \chatwork --name \hubot
